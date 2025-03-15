@@ -8,11 +8,11 @@ type CardDetalheAulaProp = {
    horas: string;
    nivel: string;
    eixoCIEB: string;
-   
+
 
 }
 
-export default function CardDetalheAula({ curso, horas,  nivel, eixoCIEB}: CardDetalheAulaProp) {
+export default function CardDetalheAula({ curso, horas, nivel, eixoCIEB }: CardDetalheAulaProp) {
 
 
    return (
@@ -27,14 +27,14 @@ export default function CardDetalheAula({ curso, horas,  nivel, eixoCIEB}: CardD
 
 
          <CardContent className="p-2 flex items-center justify-center flex-col  border-r-1 border-blue-300">
-         
+
             <p className="font-semibold text-sm">Curso</p>
             <p className="text-gray-500 text-xs">{curso}</p>
          </CardContent>
 
 
          <CardContent className="p-2 flex items-center justify-center flex-col  border-r-1 border-blue-300">
-      
+
             <p className="font-semibold text-sm">Nível </p>
             <p className="text-gray-500 text-sm">{nivel}</p>
          </CardContent>
