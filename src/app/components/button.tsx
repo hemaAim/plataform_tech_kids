@@ -8,10 +8,10 @@ import Link from "next/link"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "900", "500", "300"] });
 type GradientButtonProps = {
-  LinkPage?: any
+  LinkPage?: string
   textButton?: string
   boolColor?: number
-  Onclick?: any
+  Onclick?: () => void;
 }
 
 

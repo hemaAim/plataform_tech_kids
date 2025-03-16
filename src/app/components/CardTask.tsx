@@ -16,7 +16,7 @@ type CardTaskProps = {
 
 
 export default function CardTask({ lesson }: CardTaskProps) { 
-  const [concluidoAula, setConcluidoAula] = useState(false)
+
   let materialUrl = "";
   try {
     const materialArray = JSON.parse(lesson.material); // Converte para array

@@ -25,7 +25,7 @@ const parseArrayField = (fieldValue: string | undefined): string[] => {
    if (!fieldValue) return [];
    try {
       return JSON.parse(fieldValue).map((item: string) => item.trim());
-   } catch (error) {
+   } catch (error: any) {
       return [fieldValue.trim()]; // Retorna como um único item se não estiver no formato JSON
    }
 };

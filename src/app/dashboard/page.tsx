@@ -7,6 +7,7 @@ import { Header } from "../components/Header";
 import CardTask from "../components/CardTask";
 import { useLessons } from "@/context/lesson";
 import Image from "next/image";
+import { LessonDTO } from "../services/lesson";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +41,7 @@ export default function Dashboard() {
             {loading ? (
               <p>Carregando aulas...</p>
             ) : (
-              lessons.map((lesson: any) => <CardTask key={lesson.id} lesson={lesson} />)
+              lessons.map((lesson: LessonDTO) => <CardTask key={lesson.id} lesson={lesson} />)
             )}
           </div>
         </div>

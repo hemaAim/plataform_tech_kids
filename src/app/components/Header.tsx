@@ -1,9 +1,9 @@
 "use Client"
-import { Orbitron } from "next/font/google";
+
 import Image from "next/image";
 import Link from "next/link"; // Importando o Link do Next.js
 
-const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"] });
+
 type HeaderProp = {
 
   Img: string

@@ -1,6 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Star } from "lucide-react"
-import LevelProgress from "./LevelProgress";
 
 type CardDetalheAulaProp = {
 

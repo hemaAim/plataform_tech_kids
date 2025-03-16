@@ -5,7 +5,7 @@ import { usePDFCache } from "@/hooks/usePDFCache";
 
 type SecurePDFViewerProps = {
   pdfUrl: string; 
-  onClick?: any
+  onClick?: () => void;
 };
 
 export default function SecurePDFViewer({ pdfUrl, onClick }: SecurePDFViewerProps) {
