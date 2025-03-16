@@ -25,7 +25,7 @@ const parseArrayField = (fieldValue: string | undefined): string[] => {
    if (!fieldValue) return [];
    try {
       return JSON.parse(fieldValue).map((item: string) => item.trim());
-   } catch (error: any) {
+   } catch (erro) {
       return [fieldValue.trim()]; // Retorna como um único item se não estiver no formato JSON
    }
 };
@@ -75,7 +75,7 @@ export const Lesson = async (): Promise<LessonDTO[] | null> => {
          throw new Error("Phases não encontradas na resposta da API");
       }
 
-      return data.data.pipe.phases.flatMap((phase: any) =>
+      return data.data.pipe.phases.flatMap((phase:  { cards: { edges: { node: { fields: any[]; id: string; } }[] } }) =>
          phase.cards.edges.map((edge: any): LessonDTO => {
             const fields = edge.node.fields.reduce(
                (acc: Record<string, string>, field: any) => {

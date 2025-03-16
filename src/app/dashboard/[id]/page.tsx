@@ -15,12 +15,12 @@ import ModalPDF from "@/app/components/ModalPdf";
 
 const LessonPage = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
+
   const searchParams = useSearchParams();
 
-  const teacherResponse = searchParams.get("teacherResponse")
+ 
   const [activeTab, setActiveTab] = useState("Sobre");
-  const GetUserdesafio = searchParams.get("tittltId")
+
 
 
 
