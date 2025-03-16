@@ -1,6 +1,6 @@
-const PIPEFY_API_URL = "https://api.pipefy.com/graphql";
-const PIPEFY_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQaXBlZnkiLCJpYXQiOjE3NDE5MTQwMTEsImp0aSI6IjRlOWRlNzM4LTU4OGYtNGE2OS1iZDU3LTMzZDFhMmNjNGNmZCIsInN1YiI6MzAyNDA2NzU2LCJ1c2VyIjp7ImlkIjozMDI0MDY3NTYsImVtYWlsIjoiYWltaGVtYTc3QGdtYWlsLmNvbSJ9fQ.s23X3RIfdp2RmIvuVJxoL4zBeldfThmDx7x0G01xuqfFy9qni5y9RBneMTNKubMI8SAAmyehBWY7-4hjMjQMuA";
 
+const PIPEFY_API_URL = process.env.NEXT_PUBLIC_PIPEFY_API_URL!;
+const PIPEFY_TOKEN = process.env.NEXT_PUBLIC_PIPEFY_TOKEN
 
 export type LessonDTO = {
    id: string;
@@ -69,7 +69,7 @@ export const Lesson = async (): Promise<LessonDTO[] | null> => {
       }
 
       const data = await response.json();
-      console.log("Resposta completa da API:", JSON.stringify(data, null, 2));
+      //console.log("Resposta completa da API:", JSON.stringify(data, null, 2));
 
       if (!data?.data?.pipe?.phases) {
          throw new Error("Phases não encontradas na resposta da API");

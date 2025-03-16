@@ -26,7 +26,7 @@ export default function CardTask({ lesson }: CardTaskProps) {
   } catch (error) {
     console.error("Erro ao processar o material:", error);
   }
-  console.log("dados", materialUrl)
+ // console.log("dados", materialUrl)
 
   const URL = `lesson?lessonId=${lesson.id}&materialUrl=${encodeURIComponent(materialUrl)}`; 
 

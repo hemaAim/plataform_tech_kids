@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+
 import { Poppins } from "next/font/google";
 import ManchasBgFundo from "../components/BgFundoMancha";
 import { Header } from "../components/Header";

@@ -1,12 +1,5 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import SecurePDFViewer from '@/app/components/SecurePDFViewer';
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-
-} from "@/components/ui/dialog"
-
 
 
 
@@ -18,8 +11,6 @@ import CardDetalheAula from "@/app/components/CardDetalheDaAula";
 
 import SectionSobreaAula from "@/app/components/sectionSobreaAula";
 import ModalPDF from "@/app/components/ModalPdf";
-import ManchasBgFundo from "@/app/components/BgFundoMancha";
-
 
 
 const LessonPage = () => {

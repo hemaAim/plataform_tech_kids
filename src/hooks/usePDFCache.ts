@@ -33,7 +33,7 @@ export function usePDFCache(pdfUrl: string) {
          };
       };
    }, [pdfUrl]);
-   console.log("passei no hook1", cachedUrl)
+   //console.log("passei no hook1", cachedUrl)
 
    async function fetchAndCachePDF(url: string) {
       try {
@@ -52,6 +52,6 @@ export function usePDFCache(pdfUrl: string) {
          console.error("Erro ao buscar o PDF:", error);
       }
    }
-  console.log("passei no hook2", cachedUrl)
+  //console.log("passei no hook2", cachedUrl)
    return cachedUrl;
 }
