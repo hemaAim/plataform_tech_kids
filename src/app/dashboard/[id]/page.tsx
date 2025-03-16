@@ -26,7 +26,7 @@ const LessonPage = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const searchParams = useSearchParams();
-  const materialUrl = searchParams.get("materialUrl");
+
   const teacherResponse = searchParams.get("teacherResponse")
   const [activeTab, setActiveTab] = useState("Sobre");
   const GetUserdesafio = searchParams.get("tittltId")
@@ -38,7 +38,7 @@ const LessonPage = () => {
   const { lessons, loading } = useLessons();
 
   if (loading) return <p>Carregando...</p>;
-
+  const materialUrl = searchParams.get("materialUrl");
   // Aqui, assumimos que o usuário quer a aula pelo ID (que vem na URL)
   const lessonId = searchParams.get("lessonId");
   const selectedLesson = lessons.find((lesson) => lesson.id === lessonId);
@@ -50,10 +50,10 @@ const LessonPage = () => {
 
 
       <div className="w-full">
-        <Header Img="/logoAzul.svg" />
+        <Header Img="/logoAzul.svg" linkDashboard="voltar" />
         <div className=" min-h-screen flex flex-col items-center p-6 ">
 
-          <div className="max-w-4xl w-full   rounded-2xl p-6 z-10">
+          <div className="max-w-4xl w-full rounded-2xl p-6 z-10">
             <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
               <span className="text-blue-600">{selectedLesson.titulo}</span>
             </h1>
@@ -62,7 +62,7 @@ const LessonPage = () => {
               <span className="text-blue-500 font-medium">Instrutor:</span> {selectedLesson.responsavel}
             </p>
 
-            <p className="text-gray-700 mt-2">77.931 já se inscreveram</p>
+
           </div>
           <div className="absolute top-0 left-0 w-full h-96  bg-gray-200  ">
             <Image src={"/oculos vr.svg"}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Orbitron } from "next/font/google";
 import GradientButton from "./button";
 import { LessonDTO } from "@/app/services/lesson";
+import { useState } from "react";
 
 
 
@@ -14,7 +15,8 @@ type CardTaskProps = {
 
 
 
-export default function CardTask({ lesson }: CardTaskProps) {
+export default function CardTask({ lesson }: CardTaskProps) { 
+  const [concluidoAula, setConcluidoAula] = useState(false)
   let materialUrl = "";
   try {
     const materialArray = JSON.parse(lesson.material); // Converte para array
@@ -26,9 +28,12 @@ export default function CardTask({ lesson }: CardTaskProps) {
   }
   console.log("dados", materialUrl)
 
-  const URL = `lesson?lessonId=${lesson.id}&materialUrl=${encodeURIComponent(materialUrl)}`;
+  const URL = `lesson?lessonId=${lesson.id}&materialUrl=${encodeURIComponent(materialUrl)}`; 
+
+
+  
   return (
-    <div className="  rounded-2xl p-4 w-[350px] shadow-2xl border border-orange-300 dark:border dark:border-[#111] font-[family-name:var(--font-geist-sans)]">
+    <div className={` bg-white  rounded-2xl p-4 w-[350px] shadow-2xl border border-orange-100 dark:border dark:border-[#111] font-[family-name:var(--font-geist-sans)]`}>
       <div className="relative">
         <Image
           src="/ImagemCard.svg" // Substituir pelo caminho correto da imagem
@@ -45,15 +50,19 @@ export default function CardTask({ lesson }: CardTaskProps) {
         <h2 className={`${orbitron.className} text-lg font-bold`}>{lesson.titulo}</h2>
         <p className="text-sm text-gray-700 mt-4 mb-6 leading-tight">
           Professor: {lesson.responsavel}
+        </p> 
+
+        <p className="text-xs text-gray-700 mt-4 mb-6 leading-tight italic">
+          {lesson.objetivo}
         </p>
       </div>
-      <div className="flex flex-row gap-4 py-6">
+      <div className="flex flex-row gap-4 py-6 justify-between">
         <GradientButton
-          textButton="Concluído"
+          textButton="Iniciar"
 
           LinkPage={`/dashboard/${URL}`}
         />
-        <GradientButton textButton="Concluído" boolColor={0} />
+        <GradientButton textButton="Concluído" boolColor={0}   />
       </div>
 
 

@@ -51,7 +51,7 @@ export default function ModalPDF({ materialUrl }: ModalProps) {
          </Dialog>
          <div className="mt-6 w-3xl">
             {materialUrl ? (
-               <SecurePDFViewer pdfUrl={materialUrl} />
+               <SecurePDFViewer pdfUrl={materialUrl}  />
             ) : (
                <p>Carregando PDF...</p>
             )}
