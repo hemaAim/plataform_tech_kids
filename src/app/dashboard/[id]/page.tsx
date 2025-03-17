@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 
 
 import { useState } from "react";
-import Image from "next/image";
+
 import { Header } from "@/app/components/Header";
 import { useLessons } from "@/context/lesson";
 import CardDetalheAula from "@/app/components/CardDetalheDaAula";
