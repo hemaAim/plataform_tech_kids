@@ -97,9 +97,9 @@ export const Lesson = async (): Promise<LessonDTO[] | null> => {
       }
 
       return data.data.pipe.phases.flatMap((phase:   Phase) =>
-         phase.cards.edges.map((edge: any): LessonDTO => {
+         phase.cards.edges.map((edge: Edge): LessonDTO => {
             const fields = edge.node.fields.reduce(
-               (acc: Record<string, string>, field: any) => {
+               (acc: Record<string, string>, field: Field) => {
                   acc[field.name.trim()] = field.value;
                   return acc;
                },
@@ -121,7 +121,7 @@ export const Lesson = async (): Promise<LessonDTO[] | null> => {
                habilidadesTecnicas: parseArrayField(fields["Habilidades técnicas"] || "Não informadas"),
                eixoCIEB: fields["Eixo do CIEB"] || "",
                segmentosCIEB: fields["Exios CIEB Segmentos"] || "",
-               status: fields["Status da Aula"] || "",
+               status: parseArrayField(fields["Status da Aula"] || "[]"),
             };
          })
       );
